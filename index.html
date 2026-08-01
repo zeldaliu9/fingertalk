@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>可爱手势互动</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="video-box">
+      <!-- 16:9视频核心区域，边框、镜头、画布全部锁在这里 -->
+      <div class="camera-wrap">
+        <video id="video" autoplay muted playsinline></video>
+        <canvas id="canvas"></canvas>
+        <div class="frame-box"></div>
+      </div>
+      <!-- 按钮放在画面盒子外面！！ -->
+      <div class="btn-group">
+        <button id="openBtn">打开摄像头</button>
+        <button id="closeBtn">关闭摄像头</button>
+      </div>
+      <div class="guide-tip" id="guideTip">尝试用拇指触碰其他的手指</div>
+    </div>
+
+    <div class="panel">
+      <h4>8条自定义文案</h4>
+      <div class="edit-item">
+        <span>左手｜拇+食指</span>
+        <input data-key="leftA" value="我" />
+      </div>
+      <div class="edit-item">
+        <span>左手｜拇+中指</span>
+        <input data-key="leftB" value="很" />
+      </div>
+      <div class="edit-item">
+        <span>左手｜拇+无名指</span>
+        <input data-key="leftC" value="爱" />
+      </div>
+      <div class="edit-item">
+        <span>左手｜拇+小指</span>
+        <input data-key="leftD" value="你" />
+      </div>
+
+      <div class="edit-item">
+        <span>右手｜拇+食指</span>
+        <input data-key="rightA" value="开心" />
+      </div>
+      <div class="edit-item">
+        <span>右手｜拇+中指</span>
+        <input data-key="rightB" value="生气" />
+      </div>
+      <div class="edit-item">
+        <span>右手｜拇+无名指</span>
+        <input data-key="rightC" value="难过" />
+      </div>
+      <div class="edit-item">
+        <span>右手｜拇+小指</span>
+        <input data-key="rightD" value="吗" />
+      </div>
+
+      <div class="state-log">
+        <p>左手状态：<span id="stateLeft">-</span></p>
+        <p>右手状态：<span id="stateRight">-</span></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
